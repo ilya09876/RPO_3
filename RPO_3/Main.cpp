@@ -1,6 +1,68 @@
 #include <iostream>
 #include <windows.h>
 
+double Plus(double a, double b)
+{
+	return a + b;
+}
+double Minus(double a, double b)
+{
+	return a - b;
+}
+double Umnojit(double a, double b)
+{
+	return a * b;
+}
+double Delit(double a, double b)
+{
+	if (b == 0)
+	{
+		return 0;
+	}
+	else
+	{
+		return a / b;
+	}
+}
+
+
+int main()
+{
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	double chislo1 = 0;
+	int vibor_operatora = 0;
+	double chislo2 = 0;
+	
+	while (true)
+	{
+		std::cout << "Введите первое число: ";
+		std::cin >> chislo1;
+		std::cout << "1.+\n2.-\n3.*\n4./\nВыберите, что сделать с числом: ";
+		std::cin >> vibor_operatora;
+		std::cout << "Введите второе число: ";
+		std::cin >> chislo2;
+		if (vibor_operatora == 1)
+		{
+			std::cout << "Ответ: " << Plus(chislo1, chislo2) << "\n";
+		}
+		else if (vibor_operatora == 2)
+		{
+			std::cout << "Ответ: " << Minus(chislo1, chislo2) << "\n";
+		}
+		else if (vibor_operatora == 3)
+		{
+			std::cout << "Ответ: " << Umnojit(chislo1, chislo2) << "\n";
+		}
+		else if (vibor_operatora == 4)
+		{
+			std::cout << "Ответ: " << Delit(chislo1, chislo2) << "\n";
+		}
+	}
+
+
+	return 0;
+}
 
 //int main()
 //{
@@ -15,7 +77,6 @@
 //
 //	return 0;
 //?
-
 
 /*
 	Типы данных:
@@ -55,51 +116,6 @@
 	std::cout << "Пачка пельменей стоит примерно " << 500 << " рублей\n";
 	std::cout << "\t";
 */
-/*int main()
-{
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-	int a = 0;
-
-	do
-	{
-		std::cout << "Меню:\n";
-		std::cout << "1) - Ларионов\n";
-		std::cout << "2) - Александр\n";
-		std::cout << "3) - Дмитриевич\n";
-		std::cout << "Выбери число(1-3): \n";
-		std::cin >> a;
-
-
-
-	} while (a < 1 || a >3);
-
-	if (a == 1)
-	{
-		std::cout << "Ларионов\n";
-	}
-	else if (a == 2)
-	{
-		std::cout << "Александр\n";
-	}
-	else
-	{
-		std::cout << "Дмитриевич\n";
-		return 0;
-		{
-
-		}
-	}*/
-int main()
-{
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-	
-	123321;
-
-
-	return 0;
-}
 
 /*
 int choose = 0, number = 0, hp = 0, randomNumber = 0;
@@ -421,4 +437,44 @@ int choose = 0, number = 0, hp = 0, randomNumber = 0;
 		}
 		std::cout << "\n";
 	}
+*/
+
+/*
+тип_возрата Имя_функции(аргументы_функции, ...)
+{
+	тело_функции
+}
+*/
+
+/*
+
+
+void PrintHello()
+{
+	std::cout << "Hello\n";
+}
+
+void PrintNum(int a, double b)
+{
+	std::cout << a + b << "\n";
+}
+
+int Sum(int a, int b)
+{
+	return a + b;
+}
+
+int main()
+{
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	int playerHP = 1;
+
+	PrintNum(playerHP, 15);
+
+	std::cout << Sum(5, 6);
+
+
+	return 0;
+}
 */
