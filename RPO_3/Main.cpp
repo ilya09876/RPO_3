@@ -1,28 +1,19 @@
 #include <iostream>
 #include <windows.h>
 
-double Plus(double a, double b)
+
+
+int Umnoj(int num1, int num2)
 {
-	return a + b;
-}
-double Minus(double a, double b)
-{
-	return a - b;
-}
-double Umnojit(double a, double b)
-{
-	return a * b;
-}
-double Delit(double a, double b)
-{
-	if (b == 0)
+	if (num2 < 0)
+	{
+		return 1;
+	}
+	if (num2 == 0)
 	{
 		return 0;
 	}
-	else
-	{
-		return a / b;
-	}
+	return num1 + Umnoj(num1, num2 - 1);
 }
 
 
@@ -30,39 +21,22 @@ int main()
 {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
-	double chislo1 = 0;
-	int vibor_operatora = 0;
-	double chislo2 = 0;
-	
-	while (true)
-	{
-		std::cout << "Введите первое число: ";
-		std::cin >> chislo1;
-		std::cout << "1.+\n2.-\n3.*\n4./\nВыберите, что сделать с числом: ";
-		std::cin >> vibor_operatora;
-		std::cout << "Введите второе число: ";
-		std::cin >> chislo2;
-		if (vibor_operatora == 1)
-		{
-			std::cout << "Ответ: " << Plus(chislo1, chislo2) << "\n";
-		}
-		else if (vibor_operatora == 2)
-		{
-			std::cout << "Ответ: " << Minus(chislo1, chislo2) << "\n";
-		}
-		else if (vibor_operatora == 3)
-		{
-			std::cout << "Ответ: " << Umnojit(chislo1, chislo2) << "\n";
-		}
-		else if (vibor_operatora == 4)
-		{
-			std::cout << "Ответ: " << Delit(chislo1, chislo2) << "\n";
-		}
-	}
 
-
-	return 0;
+	std::cout << Umnoj(5, 10);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //int main()
 //{
@@ -476,5 +450,190 @@ int main()
 
 
 	return 0;
+}
+*/
+
+/*
+double Plus(double a, double b)
+{
+	return a + b;
+}
+double Minus(double a, double b)
+{
+	return a - b;
+}
+double Umnojit(double a, double b)
+{
+	return a * b;
+}
+double Delit(double a, double b)
+{
+	if (b == 0)
+	{
+		return 0;
+	}
+	else
+	{
+		return a / b;
+	}
+}
+
+
+int main()
+{
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	double chislo1 = 0;
+	int vibor_operatora = 0;
+	double chislo2 = 0;
+
+	while (true)
+	{
+		std::cout << "Введите первое число: ";
+		std::cin >> chislo1;
+		std::cout << "1.+\n2.-\n3.*\n4./\nВыберите, что сделать с числом: ";
+		std::cin >> vibor_operatora;
+		std::cout << "Введите второе число: ";
+		std::cin >> chislo2;
+		if (vibor_operatora == 1)
+		{
+			std::cout << "Ответ: " << Plus(chislo1, chislo2) << "\n";
+		}
+		else if (vibor_operatora == 2)
+		{
+			std::cout << "Ответ: " << Minus(chislo1, chislo2) << "\n";
+		}
+		else if (vibor_operatora == 3)
+		{
+			std::cout << "Ответ: " << Umnojit(chislo1, chislo2) << "\n";
+		}
+		else if (vibor_operatora == 4)
+		{
+			std::cout << "Ответ: " << Delit(chislo1, chislo2) << "\n";
+		}
+	}
+
+
+	return 0;
+}
+*/
+
+/*
+double Sum(double one, double two)
+{
+	return one + two;
+}
+
+int Sum(int one, int two)
+{
+	return one + two;
+}
+
+int main()
+{
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+
+	std::cout << Sum(1.2, 5.1);
+}
+*/
+
+/*
+void FillArray(int arr[], int arr_size);
+void FillArray(double arr[], int arr_size);
+void FillArray(char arr[], int arr_size);
+
+void ShowArray(int arr[], int arr_size);
+void ShowArray(double arr[], int arr_size);
+void ShowArray(char arr[], int arr_size);
+
+
+template <typename T1, typename T2>
+T2 Substruct(T1 one, T2 two)
+{
+	return one - two;
+}
+
+int Fac(int num)
+{
+	if (num < 0)
+	{
+		return 0;
+	}
+	else if (num == 0)
+	{
+		return 1;
+	}
+	return num * Fac(num - 1);
+}
+
+int main()
+{
+	std::cout << Fac(5);
+	//std::cout << Substruct(10, 3.2);
+
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+
+	const int size = 4;
+
+	int arr1[size]{};
+	double arr2[size]{};
+	char arr3[size]{};
+
+
+	//FillArray(arr1, size);
+	//FillArray(arr2, size);
+	//FillArray(arr3, size);
+	//ShowArray(arr1, size);
+	//ShowArray(arr2, size);
+	//ShowArray(arr3, size);
+}
+
+void FillArray(int arr[], int arr_size)
+{
+	for (size_t i = 0; i < arr_size; i++)
+	{
+		arr[i] = rand() % 201 - 100;
+	}
+}
+void FillArray(double arr[], int arr_size)
+{
+	for (size_t i = 0; i < arr_size; i++)
+	{
+		arr[i] = (double)(rand() % 201 - 100 + (double)(rand() % 10 + 1) / 10);
+	}
+}
+void FillArray(char arr[], int arr_size)
+{
+	for (size_t i = 0; i < arr_size; i++)
+	{
+		arr[i] = rand() % 26 + 97;
+	}
+}
+
+void ShowArray(int arr[], int arr_size)
+{
+	for (size_t i = 0; i < arr_size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
+}
+void ShowArray(double arr[], int arr_size)
+{
+	for (size_t i = 0; i < arr_size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
+}
+void ShowArray(char arr[], int arr_size)
+{
+	for (size_t i = 0; i < arr_size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	std::cout << "\n";
 }
 */
