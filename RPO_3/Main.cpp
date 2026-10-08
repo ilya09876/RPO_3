@@ -3,26 +3,251 @@
 
 
 
-int Umnoj(int num1, int num2)
-{
-	if (num2 < 0)
-	{
-		return 1;
-	}
-	if (num2 == 0)
-	{
-		return 0;
-	}
-	return num1 + Umnoj(num1, num2 - 1);
-}
-
-
 int main()
 {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
+	int fruktovie[4]{};
+	int ovoshnie[3]{};
+	int chayi[2]{};
+	int nastoyki[1]{};
 
-	std::cout << Umnoj(5, 10);
+	int cartprice = 0;
+
+	double discont = 13;
+
+	std::cout << "Добро пожаловать в магазин \"Соки Александра\".\n";
+	while (true)
+	{
+		int category = 0;
+		
+		system("cls");
+		std::cout << "Категории:\n";
+		std::cout << "1.Фруктовые соки\n";
+		std::cout << "2.Овощные соки\n";
+		std::cout << "3.Чаи\n";
+		std::cout << "4.Настойки\n";
+		std::cout << "5.Посмотреть корзину\n";
+		std::cout << "Выберите категорию(0 - выйти): ";
+		std::cin >> category;
+		if (category == 0)
+		{
+			break;
+		}
+		if (category == 1)
+		{
+			system("cls");
+			std::cout << "Выбрана категория \"Фруктовые соки\".\n";
+			while (true)
+			{
+				std::cout << "Ассортимент категории:\n";
+				std::cout << "1.Яблочный	(1 литр)		[100р]\n";
+				std::cout << "2.Апельсиновый	(1 литр)		[110р]\n";
+				std::cout << "3.Абрикосовый	(1 литр)		[120р]\n";
+				std::cout << "4.Грушевый	(1 литр)		[130р]\n";
+				std::cout << "Выберите напиток(0 - назад): ";
+				std::cin >> category;
+				system("cls");
+				if (category == 0)
+				{
+					break;
+				}
+				if (category == 1)
+				{
+					fruktovie[0] += 1;
+					cartprice += 100;
+				}
+				if (category == 2)
+				{
+					fruktovie[1] += 1;
+					cartprice += 110;
+				}
+				if (category == 3)
+				{
+					fruktovie[2] += 1;
+					cartprice += 120;
+				}
+				if (category == 4)
+				{
+					fruktovie[3] += 1;
+					cartprice += 130;
+				}
+				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+				system("pause");
+				system("cls");
+			}
+		}
+		if (category == 2)
+		{
+			system("cls");
+			std::cout << "Выбрана категория \"Овощные соки\".\n";
+			while (true)
+			{
+				std::cout << "Ассортимент категории:\n";
+				std::cout << "1.Томатный		[150р]\n";
+				std::cout << "2.Луковый		[160р]\n";
+				std::cout << "3.Огуречный		[170р]\n";
+				std::cout << "Выберите напиток(0 - назад): ";
+				std::cin >> category;
+				system("cls");
+				if (category == 0)
+				{
+					break;
+				}
+				if (category == 1)
+				{
+					ovoshnie[0] += 1;
+					cartprice += 150;
+				}
+				if (category == 2)
+				{
+					ovoshnie[1] += 1;
+					cartprice += 160;
+				}
+				if (category == 3)
+				{
+					ovoshnie[2] += 1;
+					cartprice += 170;
+				}
+				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+				system("pause");
+				system("cls");
+			}
+		}
+		if (category == 3)
+		{
+			system("cls");
+			std::cout << "Выбрана категория \"Чаи\".\n";
+			while (true)
+			{
+				std::cout << "Ассортимент категории:\n";
+				std::cout << "1.Чесночный		[200р]\n";
+				std::cout << "2.Петрушевый		[220р]\n";
+				std::cout << "Выберите напиток(0 - назад): ";
+				std::cin >> category;
+				system("cls");
+				if (category == 0)
+				{
+					break;
+				}
+				if (category == 1)
+				{
+					chayi[0] += 1;
+					cartprice += 200;
+				}
+				if (category == 2)
+				{
+					chayi[1] += 1;
+					cartprice += 220;
+				}
+				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+				system("pause");
+				system("cls");
+			}
+		}
+		if (category == 4)
+		{
+			system("cls");
+			std::cout << "Выбрана категория \"Чаи\".\n";
+			while (true)
+			{
+				std::cout << "Ассортимент категории:\n";
+				std::cout << "1.Боярышник		[350р]\n";
+				std::cout << "Выберите напиток(0 - назад): ";
+				std::cin >> category;
+				system("cls");
+				if (category == 0)
+				{
+					break;
+				}
+				if (category == 1)
+				{
+					nastoyki[0] += 1;
+					cartprice += 200;
+				}
+				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+				system("pause");
+				system("cls");
+			}
+		}
+		if (category == 5)
+		{
+			while (true)
+			{
+				system("cls");
+				std::cout << "---Фруктовые соки---\n";
+				std::cout << "Яблочный:" << fruktovie[0] << "\n";
+				std::cout << "Апельсиновый:" << fruktovie[1] << "\n";
+				std::cout << "Абрикосовый:" << fruktovie[2] << "\n";
+				std::cout << "Грушевый:" << fruktovie[3] << "\n";
+
+				std::cout << "---Овощные соки---\n";
+				std::cout << "Томатовый:" << ovoshnie[0] << "\n";
+				std::cout << "Луковый:" << ovoshnie[1] << "\n";
+				std::cout << "Огуречный:" << ovoshnie[2] << "\n";
+
+				std::cout << "---Чаи---\n";
+				std::cout << "Чесночный:" << chayi[0] << "\n";
+				std::cout << "Петрушевый:" << chayi[1] << "\n";
+
+				std::cout << "---Настойки---\n";
+				std::cout << "Боярышник:" << nastoyki[0] << "\n\n";
+
+				std::cout << "0.Назад\n";
+				std::cout << "1.Убрать товары\n";
+				std::cout << "2.Перейти к оплате\n";
+				std::cout << "Выберите пункт: ";
+				std::cin >> category;
+				if (category == 0)
+				{
+					break;
+				}
+				while (true)
+				{
+					if (category == 1)
+					{
+						std::cout << "Категории:\n";
+						std::cout << "1.Фруктовые соки\n";
+						std::cout << "2.Овощные соки\n";
+						std::cout << "3.Чаи\n";
+						std::cout << "4.Настойки\n";
+						std::cout << "Выберите, из какой категории убрать товары(0 - назад): ";
+						std::cin >> category;
+						if (category == 0)
+						{
+							break;
+						}
+						if (category == 1)
+						{
+							std::cout << "1.Яблочный\n";
+							std::cout << "2.Апельсиновый\n";
+							std::cout << "3.Абрикосовый\n";
+							std::cout << "4.Грушевый\n";
+							std::cout << "Выберите, какой сок убрать(0 - назад): ";
+							std::cin >> category;
+							if (category == 0)
+							{
+								break;
+							}
+							if (category == 1)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								fruktovie[0] -= category;
+							}
+						}
+					}
+				}
+
+				if (category == 2)
+				{
+					std::cout << "Итоговая цена: " << cartprice << "\n";
+				}
+			}
+		}
+	}
+
+	return 0;
 }
 
 
@@ -635,5 +860,29 @@ void ShowArray(char arr[], int arr_size)
 		std::cout << arr[i] << " ";
 	}
 	std::cout << "\n";
+}
+*/
+
+/*
+int Umnoj(int num1, int num2)
+{
+	if (num2 < 0)
+	{
+		return 1;
+	}
+	if (num2 == 0)
+	{
+		return 0;
+	}
+	return num1 + Umnoj(num1, num2 - 1);
+}
+
+
+int main()
+{
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+
+	std::cout << Umnoj(5, 10);
 }
 */
