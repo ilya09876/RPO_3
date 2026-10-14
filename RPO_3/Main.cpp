@@ -7,28 +7,32 @@ int main()
 {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
+
 	int fruktovie[4]{};
 	int ovoshnie[3]{};
 	int chayi[2]{};
 	int nastoyki[1]{};
 
-	int yablochniprice = 100;
-	int apelsinoviprice = 110;
-	int abrikosoviprice = 120;
-	int grusheviprice = 130;
+	double yablochniprice = 100;
+	double apelsinoviprice = 110;
+	double abrikosoviprice = 120;
+	double grusheviprice = 130;
 
-	int tomatniprice = 150;
-	int lukoviprice = 160;
-	int ogurechniprice = 155;
+	double tomatniprice = 150;
+	double lukoviprice = 160;
+	double ogurechniprice = 155;
 
-	int chesnochniprice = 200;
-	int petrusheviprice = 220;
+	double chesnochniprice = 200;
+	double petrusheviprice = 220;
 
-	int boyarishnikprice = 350;
+	double boyarishnikprice = 350;
 
-	int cartprice = 0;
+	double cartprice = 0;
+	double visualcartprice = 0;
 
-	double discont = 13;
+	int discontminsum = 2000;
+
+	bool canbuyboyarishnik = true;
 
 	std::cout << "Добро пожаловать в магазин \"Соки Александра\".\n";
 	while (true)
@@ -66,7 +70,7 @@ int main()
 					break;
 				}
 
-				if (category == 1)
+				else if (category == 1)
 				{
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
@@ -74,6 +78,14 @@ int main()
 					{
 						fruktovie[0] += category;
 						cartprice += yablochniprice * category;
+						canbuyboyarishnik = false;
+						if (nastoyki[0] > 0)
+						{
+							cartprice -= boyarishnikprice * nastoyki[0];
+							nastoyki[0] = 0;
+							std::cout << "Фруктовые соки нельзя покупать вместе с боярышником. Боярышник был удалён из корзины!\n";
+							system("pause");
+						}
 						system("cls");
 						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
 						system("pause");
@@ -87,7 +99,7 @@ int main()
 					}
 				}
 
-				if (category == 2)
+				else if (category == 2)
 				{
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
@@ -95,6 +107,14 @@ int main()
 					{
 						fruktovie[1] += category;
 						cartprice += apelsinoviprice * category;
+						canbuyboyarishnik = false;
+						if (nastoyki[0] > 0)
+						{
+							cartprice -= boyarishnikprice * nastoyki[0];
+							nastoyki[0] = 0;
+							std::cout << "Фруктовые соки нельзя покупать вместе с боярышником. Боярышник был удалён из корзины!\n";
+							system("pause");
+						}
 						system("cls");
 						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
 						system("pause");
@@ -108,7 +128,7 @@ int main()
 					}
 				}
 
-				if (category == 3)
+				else if (category == 3)
 				{
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
@@ -116,6 +136,14 @@ int main()
 					{
 						fruktovie[2] += category;
 						cartprice += abrikosoviprice * category;
+						canbuyboyarishnik = false;
+						if (nastoyki[0] > 0)
+						{
+							cartprice -= boyarishnikprice * nastoyki[0];
+							nastoyki[0] = 0;
+							std::cout << "Фруктовые соки нельзя покупать вместе с боярышником. Боярышник был удалён из корзины!\n";
+							system("pause");
+						}
 						system("cls");
 						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
 						system("pause");
@@ -129,7 +157,7 @@ int main()
 					}
 				}
 
-				if (category == 4)
+				else if (category == 4)
 				{
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
@@ -137,6 +165,14 @@ int main()
 					{
 						fruktovie[3] += category;
 						cartprice += grusheviprice * category;
+						canbuyboyarishnik = false;
+						if (nastoyki[0] > 0)
+						{
+							cartprice -= boyarishnikprice * nastoyki[0];
+							nastoyki[0] = 0;
+							std::cout << "Фруктовые соки нельзя покупать вместе с боярышником. Боярышник был удалён из корзины!\n";
+							system("pause");
+						}
 						system("cls");
 						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
 						system("pause");
@@ -169,7 +205,8 @@ int main()
 				{
 					break;
 				}
-				if (category == 1)
+
+				else if (category == 1)
 				{
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
@@ -189,8 +226,10 @@ int main()
 						break;
 					}
 				}
-				if (category == 2)
+
+				else if (category == 2)
 				{
+					std::cout << "Каждый 4 литр лукового сока в подарок!\n";
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
 					if (category >= 0)
@@ -209,7 +248,8 @@ int main()
 						break;
 					}
 				}
-				if (category == 3)
+
+				else if (category == 3)
 				{
 					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
 					std::cin >> category;
@@ -248,6 +288,7 @@ int main()
 				{
 					break;
 				}
+
 				if (category == 1)
 				{
 					std::cout << "Выберите, сколько литров чая добавить в корзину: ";
@@ -268,8 +309,10 @@ int main()
 						break;
 					}
 				}
-				if (category == 2)
+
+				else if (category == 2)
 				{
+					std::cout << "При покупке 3 литров петрушевого чая, скидка 5% на них (В ТЗ НЕ НАПИСАНО ОТ 3, ПОЭТОМУ ТОЛЬКО ЗА 3, но не уверен)\n";
 					std::cout << "Выберите, сколько литров чая добавить в корзину: ";
 					std::cin >> category;
 					if (category >= 0)
@@ -306,8 +349,19 @@ int main()
 				{
 					break;
 				}
-				if (category == 1)
+
+				else if (category == 1)
 				{
+					if (fruktovie[0] == 0 && fruktovie[1] == 0 && fruktovie[2] == 0 && fruktovie[3] == 0)
+					{
+						canbuyboyarishnik = true;
+					}
+					if (canbuyboyarishnik == false)
+					{
+						std::cout << "Нельзя покупать боярышник вместе с фруктовыми соками!\n";
+						system("pause");
+						break;
+					}
 					std::cout << "Выберите, сколько литров настойки добавить в корзину: ";
 					std::cin >> category;
 					if (category >= 0)
@@ -365,6 +419,7 @@ int main()
 					system("cls");
 					break;
 				}
+
 				if (category == 1)
 				{
 					while (true)
@@ -426,7 +481,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (fruktovie[0] - category >= 0)
+								if (fruktovie[0] - category >= 0 && category > 0)
 								{
 									fruktovie[0] -= category;
 									cartprice -= yablochniprice * category;
@@ -446,7 +501,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (fruktovie[1] - category >= 0)
+								if (fruktovie[1] - category >= 0 && category > 0)
 								{
 									fruktovie[1] -= category;
 									cartprice -= apelsinoviprice * category;
@@ -466,7 +521,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (fruktovie[2] - category >= 0)
+								if (fruktovie[2] - category >= 0 && category > 0)
 								{
 									fruktovie[2] -= category;
 									cartprice -= abrikosoviprice * category;
@@ -486,7 +541,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (fruktovie[3] - category >= 0)
+								if (fruktovie[3] - category >= 0 && category > 0)
 								{
 									fruktovie[3] -= category;
 									cartprice -= grusheviprice * category;
@@ -500,6 +555,11 @@ int main()
 									system("pause");
 									break;
 								}
+							}
+
+							if (fruktovie[0] == 0 && fruktovie[1] == 0 && fruktovie[2] == 0 && fruktovie[3] == 0)
+							{
+								canbuyboyarishnik = true;
 							}
 						}
 
@@ -525,7 +585,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (ovoshnie[0] - category >= 0)
+								if (ovoshnie[0] - category >= 0 && category > 0)
 								{
 									ovoshnie[0] -= category;
 									cartprice -= tomatniprice * category;
@@ -545,7 +605,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (ovoshnie[1] - category >= 0)
+								if (ovoshnie[1] - category >= 0 && category > 0)
 								{
 									ovoshnie[1] -= category;
 									cartprice -= lukoviprice * category;
@@ -565,7 +625,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								if (ovoshnie[2] - category >= 0)
+								if (ovoshnie[2] - category >= 0 && category > 0)
 								{
 									ovoshnie[2] -= category;
 									cartprice -= ogurechniprice * category;
@@ -591,7 +651,7 @@ int main()
 
 							std::cout << "1.Чесночный\n";
 							std::cout << "2.Петрушевый\n";
-							std::cout << "Выберите, какой сок убрать(0 - назад): ";
+							std::cout << "Выберите, какой чай убрать(0 - назад): ";
 							std::cin >> category;
 							if (category == 0)
 							{
@@ -602,7 +662,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров чая убрать: ";
 								std::cin >> category;
-								if (chayi[0] - category >= 0)
+								if (chayi[0] - category >= 0 && category > 0)
 								{
 									chayi[0] -= category;
 									cartprice -= chesnochniprice * category;
@@ -622,7 +682,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров чая убрать: ";
 								std::cin >> category;
-								if (chayi[1] - category >= 0)
+								if (chayi[1] - category >= 0 && category > 0)
 								{
 									chayi[1] -= category;
 									cartprice -= petrusheviprice * category;
@@ -643,7 +703,7 @@ int main()
 						{
 							system("cls");
 							std::cout << "---Настойки---\n";
-							std::cout << "Боярышник:" << chayi[1] << "\n\n";
+							std::cout << "Боярышник:" << nastoyki[0] << "\n\n";
 
 							std::cout << "1.Боярышник\n";
 							std::cout << "Выберите, какую настойку убрать(0 - назад): ";
@@ -657,7 +717,7 @@ int main()
 							{
 								std::cout << "Выберите, сколько литров настойки убрать: ";
 								std::cin >> category;
-								if (nastoyki[0] - category >= 0)
+								if (nastoyki[0] - category >= 0 && category > 0)
 								{
 									nastoyki[0] -= category;
 									cartprice -= boyarishnikprice * category;
@@ -675,11 +735,47 @@ int main()
 						}
 					}
 				}
+
 				if (category == 2)
 				{
-					std::cout << "Итоговая цена: " << cartprice << "\n";
+					system("cls");
+					std::cout << "Сумма товаров: " << cartprice << "\n";
+					visualcartprice = cartprice;
+					if (chayi[1] == 3)
+					{
+						std::cout << "Скидка 5% на петрушевый чай применена! Скидка составила " << petrusheviprice * chayi[1] * 0.05 << "р (В ТЗ НЕ НАПИСАНО ОТ 3, ПОЭТОМУ ТОЛЬКО ЗА 3, но не уверен)\n";
+						visualcartprice -= petrusheviprice * chayi[1] * 0.05;
+					}
+					if (ovoshnie[1] >= 4)
+					{
+						std::cout << "Скидка \"Каждый 4 литр лукового сока в подарок\" применена! Скидка составила " << lukoviprice * (ovoshnie[1] / 4) << "р\n";
+						visualcartprice -= lukoviprice * (ovoshnie[1] / 4);
+					}
+					if (cartprice >= discontminsum)
+					{
+						std::cout << "Скидка 13% при покупке от " << discontminsum << " рублей применена на всю покупку! Скидка составила " << visualcartprice * 0.13 << "р\n";
+						visualcartprice -= visualcartprice * 0.13;
+					}
+					std::cout << "Итоговая сумма: " << visualcartprice << "р\n";
+					std::cout << "0.Назад\n";
+					std::cout << "1.Оплатить\n";
+					std::cout << "Выберите пункт: ";
+					std::cin >> category;
+					if (category == 1)
+					{
+						std::cout << "Спасибо за покупку!\n";
+						system("pause");
+						system("cls");
+						main();
+						return 0;
+					}
 				}
 			}
+		}
+
+		else
+		{
+			system("cls");
 		}
 	}
 
