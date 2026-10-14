@@ -12,6 +12,20 @@ int main()
 	int chayi[2]{};
 	int nastoyki[1]{};
 
+	int yablochniprice = 100;
+	int apelsinoviprice = 110;
+	int abrikosoviprice = 120;
+	int grusheviprice = 130;
+
+	int tomatniprice = 150;
+	int lukoviprice = 160;
+	int ogurechniprice = 155;
+
+	int chesnochniprice = 200;
+	int petrusheviprice = 220;
+
+	int boyarishnikprice = 350;
+
 	int cartprice = 0;
 
 	double discont = 13;
@@ -21,7 +35,6 @@ int main()
 	{
 		int category = 0;
 		
-		system("cls");
 		std::cout << "Категории:\n";
 		std::cout << "1.Фруктовые соки\n";
 		std::cout << "2.Овощные соки\n";
@@ -34,143 +47,290 @@ int main()
 		{
 			break;
 		}
-		if (category == 1)
+
+		else if (category == 1)
 		{
 			system("cls");
 			std::cout << "Выбрана категория \"Фруктовые соки\".\n";
 			while (true)
 			{
 				std::cout << "Ассортимент категории:\n";
-				std::cout << "1.Яблочный	(1 литр)		[100р]\n";
-				std::cout << "2.Апельсиновый	(1 литр)		[110р]\n";
-				std::cout << "3.Абрикосовый	(1 литр)		[120р]\n";
-				std::cout << "4.Грушевый	(1 литр)		[130р]\n";
+				std::cout << "1.Яблочный	(1 литр)		[" << yablochniprice << "р]\n";
+				std::cout << "2.Апельсиновый	(1 литр)		["<< apelsinoviprice << "р]\n";
+				std::cout << "3.Абрикосовый	(1 литр)		[" << abrikosoviprice << "р]\n";
+				std::cout << "4.Грушевый	(1 литр)		[" << grusheviprice << "р]\n";
 				std::cout << "Выберите напиток(0 - назад): ";
 				std::cin >> category;
-				system("cls");
 				if (category == 0)
 				{
 					break;
 				}
+
 				if (category == 1)
 				{
-					fruktovie[0] += 1;
-					cartprice += 100;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						fruktovie[0] += category;
+						cartprice += yablochniprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
+
 				if (category == 2)
 				{
-					fruktovie[1] += 1;
-					cartprice += 110;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						fruktovie[1] += category;
+						cartprice += apelsinoviprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
+
 				if (category == 3)
 				{
-					fruktovie[2] += 1;
-					cartprice += 120;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						fruktovie[2] += category;
+						cartprice += abrikosoviprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
+
 				if (category == 4)
 				{
-					fruktovie[3] += 1;
-					cartprice += 130;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						fruktovie[3] += category;
+						cartprice += grusheviprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
-				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
-				system("pause");
-				system("cls");
 			}
+			system("cls");
 		}
-		if (category == 2)
+
+		else if (category == 2)
 		{
 			system("cls");
 			std::cout << "Выбрана категория \"Овощные соки\".\n";
 			while (true)
 			{
 				std::cout << "Ассортимент категории:\n";
-				std::cout << "1.Томатный		[150р]\n";
-				std::cout << "2.Луковый		[160р]\n";
-				std::cout << "3.Огуречный		[170р]\n";
+				std::cout << "1.Томатный		[" << tomatniprice << "р]\n";
+				std::cout << "2.Луковый		[" << lukoviprice << "р]\n";
+				std::cout << "3.Огуречный		[" << ogurechniprice << "р]\n";
 				std::cout << "Выберите напиток(0 - назад): ";
 				std::cin >> category;
-				system("cls");
 				if (category == 0)
 				{
 					break;
 				}
 				if (category == 1)
 				{
-					ovoshnie[0] += 1;
-					cartprice += 150;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						ovoshnie[0] += category;
+						cartprice += tomatniprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
 				if (category == 2)
 				{
-					ovoshnie[1] += 1;
-					cartprice += 160;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						ovoshnie[1] += category;
+						cartprice += lukoviprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
 				if (category == 3)
 				{
-					ovoshnie[2] += 1;
-					cartprice += 170;
+					std::cout << "Выберите, сколько литров сока добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						ovoshnie[2] += category;
+						cartprice += ogurechniprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
-				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
-				system("pause");
-				system("cls");
 			}
+			system("cls");
 		}
-		if (category == 3)
+
+		else if (category == 3)
 		{
 			system("cls");
 			std::cout << "Выбрана категория \"Чаи\".\n";
 			while (true)
 			{
 				std::cout << "Ассортимент категории:\n";
-				std::cout << "1.Чесночный		[200р]\n";
-				std::cout << "2.Петрушевый		[220р]\n";
+				std::cout << "1.Чесночный		[" << chesnochniprice << "р]\n";
+				std::cout << "2.Петрушевый		[" << petrusheviprice << "р]\n";
 				std::cout << "Выберите напиток(0 - назад): ";
 				std::cin >> category;
-				system("cls");
 				if (category == 0)
 				{
 					break;
 				}
 				if (category == 1)
 				{
-					chayi[0] += 1;
-					cartprice += 200;
+					std::cout << "Выберите, сколько литров чая добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						chayi[0] += category;
+						cartprice += chesnochniprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
 				if (category == 2)
 				{
-					chayi[1] += 1;
-					cartprice += 220;
+					std::cout << "Выберите, сколько литров чая добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						chayi[1] += category;
+						cartprice += petrusheviprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
-				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
-				system("pause");
-				system("cls");
 			}
+			system("cls");
 		}
-		if (category == 4)
+
+		else if (category == 4)
 		{
 			system("cls");
-			std::cout << "Выбрана категория \"Чаи\".\n";
+			std::cout << "Выбрана категория \"Настойки\".\n";
 			while (true)
 			{
 				std::cout << "Ассортимент категории:\n";
-				std::cout << "1.Боярышник		[350р]\n";
+				std::cout << "1.Боярышник		[" << boyarishnikprice <<"р]\n";
 				std::cout << "Выберите напиток(0 - назад): ";
 				std::cin >> category;
-				system("cls");
 				if (category == 0)
 				{
 					break;
 				}
 				if (category == 1)
 				{
-					nastoyki[0] += 1;
-					cartprice += 200;
+					std::cout << "Выберите, сколько литров настойки добавить в корзину: ";
+					std::cin >> category;
+					if (category >= 0)
+					{
+						nastoyki[0] += category;
+						cartprice += boyarishnikprice * category;
+						system("cls");
+						std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
+						system("pause");
+						system("cls");
+					}
+					else
+					{
+						std::cout << "Ошибка: колличество не должно быть отрицательным!\n";
+						system("pause");
+						break;
+					}
 				}
-				std::cout << "Успешно добавлено в корзину!\nСумма корзины: " << cartprice << " рублей.\n";
-				system("pause");
-				system("cls");
 			}
+			system("cls");
 		}
-		if (category == 5)
+
+		else if (category == 5)
 		{
 			while (true)
 			{
@@ -193,6 +353,8 @@ int main()
 				std::cout << "---Настойки---\n";
 				std::cout << "Боярышник:" << nastoyki[0] << "\n\n";
 
+				std::cout << "Сумма товаров: " << cartprice << "\n\n";
+
 				std::cout << "0.Назад\n";
 				std::cout << "1.Убрать товары\n";
 				std::cout << "2.Перейти к оплате\n";
@@ -200,12 +362,34 @@ int main()
 				std::cin >> category;
 				if (category == 0)
 				{
+					system("cls");
 					break;
 				}
-				while (true)
+				if (category == 1)
 				{
-					if (category == 1)
+					while (true)
 					{
+						system("cls");
+						std::cout << "---Фруктовые соки---\n";
+						std::cout << "Яблочный:" << fruktovie[0] << "\n";
+						std::cout << "Апельсиновый:" << fruktovie[1] << "\n";
+						std::cout << "Абрикосовый:" << fruktovie[2] << "\n";
+						std::cout << "Грушевый:" << fruktovie[3] << "\n";
+
+						std::cout << "---Овощные соки---\n";
+						std::cout << "Томатовый:" << ovoshnie[0] << "\n";
+						std::cout << "Луковый:" << ovoshnie[1] << "\n";
+						std::cout << "Огуречный:" << ovoshnie[2] << "\n";
+
+						std::cout << "---Чаи---\n";
+						std::cout << "Чесночный:" << chayi[0] << "\n";
+						std::cout << "Петрушевый:" << chayi[1] << "\n";
+
+						std::cout << "---Настойки---\n";
+						std::cout << "Боярышник:" << nastoyki[0] << "\n\n";
+
+						std::cout << "Сумма товаров: " << cartprice << "\n\n";
+
 						std::cout << "Категории:\n";
 						std::cout << "1.Фруктовые соки\n";
 						std::cout << "2.Овощные соки\n";
@@ -217,8 +401,16 @@ int main()
 						{
 							break;
 						}
-						if (category == 1)
+
+						else if (category == 1)
 						{
+							system("cls");
+							std::cout << "---Фруктовые соки---\n";
+							std::cout << "Яблочный:" << fruktovie[0] << "\n";
+							std::cout << "Апельсиновый:" << fruktovie[1] << "\n";
+							std::cout << "Абрикосовый:" << fruktovie[2] << "\n";
+							std::cout << "Грушевый:" << fruktovie[3] << "\n\n";
+
 							std::cout << "1.Яблочный\n";
 							std::cout << "2.Апельсиновый\n";
 							std::cout << "3.Абрикосовый\n";
@@ -229,16 +421,260 @@ int main()
 							{
 								break;
 							}
-							if (category == 1)
+
+							else if (category == 1)
 							{
 								std::cout << "Выберите, сколько литров сока убрать: ";
 								std::cin >> category;
-								fruktovie[0] -= category;
+								if (fruktovie[0] - category >= 0)
+								{
+									fruktovie[0] -= category;
+									cartprice -= yablochniprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+
+							else if (category == 2)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								if (fruktovie[1] - category >= 0)
+								{
+									fruktovie[1] -= category;
+									cartprice -= apelsinoviprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+
+							else if (category == 3)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								if (fruktovie[2] - category >= 0)
+								{
+									fruktovie[2] -= category;
+									cartprice -= abrikosoviprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+
+							else if (category == 4)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								if (fruktovie[3] - category >= 0)
+								{
+									fruktovie[3] -= category;
+									cartprice -= grusheviprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+						}
+
+						else if (category == 2)
+						{
+							system("cls");
+							std::cout << "---Овощные соки---\n";
+							std::cout << "Томатовый:" << ovoshnie[0] << "\n";
+							std::cout << "Луковый:" << ovoshnie[1] << "\n";
+							std::cout << "Огуречный:" << ovoshnie[2] << "\n\n";
+
+							std::cout << "1.Томатовый\n";
+							std::cout << "2.Луковый\n";
+							std::cout << "3.Огуречный\n";
+							std::cout << "Выберите, какой сок убрать(0 - назад): ";
+							std::cin >> category;
+							if (category == 0)
+							{
+								break;
+							}
+
+							else if (category == 1)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								if (ovoshnie[0] - category >= 0)
+								{
+									ovoshnie[0] -= category;
+									cartprice -= tomatniprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+
+							else if (category == 2)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								if (ovoshnie[1] - category >= 0)
+								{
+									ovoshnie[1] -= category;
+									cartprice -= lukoviprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+
+							else if (category == 3)
+							{
+								std::cout << "Выберите, сколько литров сока убрать: ";
+								std::cin >> category;
+								if (ovoshnie[2] - category >= 0)
+								{
+									ovoshnie[2] -= category;
+									cartprice -= ogurechniprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько сока!\n";
+									system("pause");
+									break;
+								}
+							}
+						}
+						
+						else if (category == 3)
+						{
+							system("cls");
+							std::cout << "---Чаи---\n";
+							std::cout << "Чесночный:" << chayi[0] << "\n";
+							std::cout << "Петрушевый:" << chayi[1] << "\n\n";
+
+							std::cout << "1.Чесночный\n";
+							std::cout << "2.Петрушевый\n";
+							std::cout << "Выберите, какой сок убрать(0 - назад): ";
+							std::cin >> category;
+							if (category == 0)
+							{
+								break;
+							}
+
+							else if (category == 1)
+							{
+								std::cout << "Выберите, сколько литров чая убрать: ";
+								std::cin >> category;
+								if (chayi[0] - category >= 0)
+								{
+									chayi[0] -= category;
+									cartprice -= chesnochniprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько чая!\n";
+									system("pause");
+									break;
+								}
+							}
+
+							else if (category == 2)
+							{
+								std::cout << "Выберите, сколько литров чая убрать: ";
+								std::cin >> category;
+								if (chayi[1] - category >= 0)
+								{
+									chayi[1] -= category;
+									cartprice -= petrusheviprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько чая!\n";
+									system("pause");
+									break;
+								}
+							}
+						}
+
+						else if (category == 4)
+						{
+							system("cls");
+							std::cout << "---Настойки---\n";
+							std::cout << "Боярышник:" << chayi[1] << "\n\n";
+
+							std::cout << "1.Боярышник\n";
+							std::cout << "Выберите, какую настойку убрать(0 - назад): ";
+							std::cin >> category;
+							if (category == 0)
+							{
+								break;
+							}
+
+							else if (category == 1)
+							{
+								std::cout << "Выберите, сколько литров настойки убрать: ";
+								std::cin >> category;
+								if (nastoyki[0] - category >= 0)
+								{
+									nastoyki[0] -= category;
+									cartprice -= boyarishnikprice * category;
+									system("cls");
+									std::cout << "Успешно!\n";
+									system("pause");
+								}
+								else
+								{
+									std::cout << "Ошибка: в корзине нет столько литров настойки!\n";
+									system("pause");
+									break;
+								}
 							}
 						}
 					}
 				}
-
 				if (category == 2)
 				{
 					std::cout << "Итоговая цена: " << cartprice << "\n";
